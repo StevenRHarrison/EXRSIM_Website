@@ -218,6 +218,25 @@ const ContactPage: React.FC = () => {
       {/* Contact Form & Info */}
       <section className="section-padding bg-exrsim-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Status Messages */}
+          {(formStatus.success || formStatus.error) && (
+            <div className={`mb-8 p-4 rounded-lg border-2 ${
+              formStatus.success 
+                ? 'bg-green-900/20 border-green-500 text-green-300' 
+                : 'bg-red-900/20 border-red-500 text-red-300'
+            }`}>
+              <div className="flex items-center">
+                {formStatus.success ? (
+                  <CheckCircle className="h-6 w-6 mr-3 flex-shrink-0" />
+                ) : (
+                  <AlertTriangle className="h-6 w-6 mr-3 flex-shrink-0" />
+                )}
+                <p className="font-medium">{formStatus.message}</p>
+              </div>
+            </div>
+          )}
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
