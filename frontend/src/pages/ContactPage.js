@@ -1,0 +1,396 @@
+import React, { useState } from 'react';
+import { 
+  Phone, 
+  Mail, 
+  MapPin, 
+  Clock, 
+  Send, 
+  CheckCircle,
+  AlertTriangle,
+  Users,
+  Calendar
+} from 'lucide-react';
+
+const ContactPage: React.FC = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    organization: '',
+    title: '',
+    sector: '',
+    inquiry: '',
+    message: '',
+    preferredContact: 'email',
+    urgency: 'normal'
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log('Form submitted:', formData);
+    alert('Thank you for your inquiry! We\'ll respond within 24 hours.');
+  };
+
+  const contactInfo = [
+    // {
+    //   icon: Phone,
+    //   title: 'Phone',
+    //   primary: '+1 (416) 555-EXRSIM',
+    //   secondary: '+1 (416) 555-3977',
+    //   description: 'Monday-Friday, 8:00 AM - 6:00 PM EST'
+    // },
+    {
+      icon: Mail,
+      title: 'Email',
+      primary: 'info@exrsim.com',
+      secondary: 'support@exrsim.com',
+      description: 'Response within 24 hours'
+    },
+    {
+      icon: MapPin,
+      title: 'Locations',
+      primary: 'Toronto, ON',
+      secondary: 'Winnipeg, MB',
+      description: 'Canada'
+    },
+    {
+      icon: Clock,
+      title: 'Business Hours',
+      primary: 'Monday - Friday: 8:00 AM - 5:00 PM',
+      secondary: 'Emergency Support: 24/7',
+      description: 'Eastern Standard Time (EST)'
+    }
+  ];
+
+  const emergencyContacts = [
+    {
+      title: 'Emergency Exercise / ICS Support',
+      email: 'support@exrsim.com',
+      description: 'For urgent exercise / ICS support during active incidents'
+    },
+    {
+      title: 'Technical Support',
+      email: 'support@exrsim.ca',
+      description: 'For critical technical issues during exercises'
+    }
+  ];
+
+  const sectors = [
+    'Energy & Utilities',
+    'Transportation',
+    'Natural or Man-made',
+    'Government',
+    'Healthcare',
+    'Industry',
+    'Education',
+    'Other'
+  ];
+
+  const inquiryTypes = [
+    'General Information',
+    'Platform Demo Request',
+    'Pricing & Licensing',
+    'Training Services',
+    'Technical Support',
+    'Partnership Inquiry',
+    'Media & Press',
+    'Other'
+  ];
+
+  return (
+    <div className="pt-20">
+      {/* Hero Section */}
+      <section className="section-padding bg-exrsim-dark">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            Contact EXRSIM
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12">
+            Get in touch with our emergency preparedness experts to discuss how EXRSIM 
+            can enhance your organization's emergency response capabilities.
+          </p>
+          
+          {/* Quick Contact Options */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="bg-exrsim-gray rounded-lg p-6 border border-gray-700">
+              <Calendar className="h-8 w-8 text-exrsim-orange mx-auto mb-3" />
+              <h3 className="text-lg font-semibold text-white mb-2">Schedule a Demo</h3>
+              <p className="text-gray-400 text-sm mb-4">See EXRSIM in action with a personalized demonstration</p>
+              <button className="btn-primary text-white px-4 py-2 rounded-lg font-medium text-sm">
+                Book Demo
+              </button>
+            </div>
+            {/* <div className="bg-exrsim-gray rounded-lg p-6 border border-gray-700">
+              <Phone className="h-8 w-8 text-exrsim-orange mx-auto mb-3" />
+              <h3 className="text-lg font-semibold text-white mb-2">Speak with Sales</h3>
+              <p className="text-gray-400 text-sm mb-4">Discuss pricing and implementation options</p>
+              <a href="tel:+14165553977" className="btn-primary text-white px-4 py-2 rounded-lg font-medium text-sm inline-block">
+                Call Sales
+              </a>
+            </div> */}
+            <div className="bg-exrsim-gray rounded-lg p-6 border border-gray-700">
+              <Users className="h-8 w-8 text-exrsim-orange mx-auto mb-3" />
+              <h3 className="text-lg font-semibold text-white mb-2">Exercise and ICS Consultation</h3>
+              <p className="text-gray-400 text-sm mb-4">Get expert advice on exercise program design</p>
+              <a href="info@exrsim.com" className="btn-primary text-white px-4 py-2 rounded-lg font-medium text-sm">
+                Consult Expert
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form & Info */}
+      <section className="section-padding bg-exrsim-gray">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-6">Send us a Message</h2>
+              <p className="text-gray-300 mb-8">
+                Fill out the form below and one of our emergency preparedness specialists 
+                will respond within 24 hours.
+              </p>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Name Fields */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-white text-sm font-medium mb-2">First Name *</label>
+                    <input
+                      type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 bg-exrsim-dark border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-exrsim-orange focus:border-transparent"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-white text-sm font-medium mb-2">Last Name *</label>
+                    <input
+                      type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 bg-exrsim-dark border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-exrsim-orange focus:border-transparent"
+                    />
+                  </div>
+                </div>
+
+                {/* Contact Fields */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-white text-sm font-medium mb-2">Email Address *</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 bg-exrsim-dark border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-exrsim-orange focus:border-transparent"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-white text-sm font-medium mb-2">Phone Number</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 bg-exrsim-dark border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-exrsim-orange focus:border-transparent"
+                    />
+                  </div>
+                </div>
+
+                {/* Organization Fields */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-white text-sm font-medium mb-2">Organization *</label>
+                    <input
+                      type="text"
+                      name="organization"
+                      value={formData.organization}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 bg-exrsim-dark border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-exrsim-orange focus:border-transparent"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-white text-sm font-medium mb-2">Job Title</label>
+                    <input
+                      type="text"
+                      name="title"
+                      value={formData.title}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 bg-exrsim-dark border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-exrsim-orange focus:border-transparent"
+                    />
+                  </div>
+                </div>
+
+                {/* Sector & Inquiry Type */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-white text-sm font-medium mb-2">Sector</label>
+                    <select
+                      name="sector"
+                      value={formData.sector}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 bg-exrsim-dark border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-exrsim-orange focus:border-transparent"
+                    >
+                      <option value="">Select your sector</option>
+                      {sectors.map((sector) => (
+                        <option key={sector} value={sector}>{sector}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-white text-sm font-medium mb-2">Inquiry Type *</label>
+                    <select
+                      name="inquiry"
+                      value={formData.inquiry}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 bg-exrsim-dark border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-exrsim-orange focus:border-transparent"
+                    >
+                      <option value="">Select inquiry type</option>
+                      {inquiryTypes.map((type) => (
+                        <option key={type} value={type}>{type}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label className="block text-white text-sm font-medium mb-2">Message *</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows={6}
+                    placeholder="Please describe your emergency preparedness training needs, challenges, or questions..."
+                    className="w-full px-4 py-3 bg-exrsim-dark border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-exrsim-orange focus:border-transparent resize-vertical"
+                  />
+                </div>
+
+                {/* Preferences */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-white text-sm font-medium mb-2">Preferred Contact Method</label>
+                    <select
+                      name="preferredContact"
+                      value={formData.preferredContact}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 bg-exrsim-dark border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-exrsim-orange focus:border-transparent"
+                    >
+                      <option value="email">Email</option>
+                      <option value="phone">Phone</option>
+                      <option value="either">Either</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-white text-sm font-medium mb-2">Urgency Level</label>
+                    <select
+                      name="urgency"
+                      value={formData.urgency}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 bg-exrsim-dark border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-exrsim-orange focus:border-transparent"
+                    >
+                      <option value="normal">Normal (24-48 hours)</option>
+                      <option value="urgent">Urgent (Same day)</option>
+                      <option value="emergency">Emergency (Immediate)</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Submit Button */}
+                <a href="mailto:info@exrsim.com"
+                  type="submit"
+                  className="w-full btn-primary text-white py-4 rounded-lg font-semibold text-lg flex items-center justify-center space-x-2"
+                >
+                  <Send className="h-5 w-5" />
+                  <span>Send Message</span>
+                </a>
+              </form>
+            </div>
+
+            {/* Contact Information */}
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-6">Get in Touch</h2>
+              <p className="text-gray-300 mb-8">
+                Our team of emergency preparedness experts is ready to help you enhance 
+                your organization's response capabilities.
+              </p>
+
+              {/* Contact Methods */}
+              <div className="space-y-6 mb-8">
+                {contactInfo.map((info, index) => (
+                  <div key={index} className="flex items-start">
+                    <div className="w-12 h-12 bg-exrsim-orange/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                      <info.icon className="h-6 w-6 text-exrsim-orange" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">{info.title}</h3>
+                      <div className="text-exrsim-orange font-medium">{info.primary}</div>
+                      {info.secondary && (
+                        <div className="text-gray-300">{info.secondary}</div>
+                      )}
+                      <div className="text-gray-400 text-sm mt-1">{info.description}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Emergency Contacts */}
+              <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-6 mb-8">
+                <div className="flex items-center mb-4">
+                  <AlertTriangle className="h-6 w-6 text-red-400 mr-3" />
+                  <h3 className="text-lg font-semibold text-red-400">Emergency Support</h3>
+                </div>
+                <p className="text-gray-300 mb-4 text-sm">
+                  For urgent support during active incidents or critical training scenarios.
+                </p>
+                <div className="space-y-4">
+                  {emergencyContacts.map((contact, index) => (
+                    <div key={index}>
+                      <div className="text-white font-medium">{contact.title}</div>
+                      <div className="text-red-400 font-medium">{contact.phone}</div>
+                      <div className="text-red-400">{contact.email}</div>
+                      <div className="text-gray-400 text-sm">{contact.description}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Response Time Guarantee */}
+              <div className="bg-exrsim-dark/50 rounded-lg p-6 border border-gray-700">
+                <div className="flex items-center mb-4">
+                  <CheckCircle className="h-6 w-6 text-exrsim-orange mr-3" />
+                  <h3 className="text-lg font-semibold text-white">Response Guarantee</h3>
+                </div>
+                <ul className="text-gray-300 text-sm space-y-2">
+                  <li>• General inquiries: Response within 24 hours</li>
+                  <li>• Sales requests: Response within 4 hours</li>
+                  <li>• Technical support: Response within 2 hours</li>
+                  <li>• Emergency support: Immediate response 24/7</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default ContactPage;

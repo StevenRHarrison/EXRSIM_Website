@@ -1,49 +1,89 @@
-# Getting Started with Create React App
+# EXRSIM Professional Websites
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A professional marketing website for EXRSIM - Canada's leading emergency response simulation platform.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This website showcases EXRSIM's comprehensive emergency preparedness training capabilities, targeting Canadian organizations across multiple sectors including government, energy, healthcare, transportation, and natural resources.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🏠 Homepage
+- **Hero Carousel**: Rotating images of Canadian emergency scenarios (wildfires, floods, ice storms, emergency operations centers)
+- **Canadian Focus**: Messaging emphasizes Canadian emergency challenges and conditions
+- **Trust Indicators**: Displays partnerships with major Canadian organizations
+- **Statistics**: Key metrics showing platform reach and effectiveness
+- **Call-to-Action**: Clear demo request and contact options
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 📋 Core Pages
+- **About**: Company mission, values, leadership team, Canadian focus
+- **Sectors**: 6 industry-specific sections (Energy, Transportation, Natural Resources, Government, Healthcare, Manufacturing)
+- **Scenarios**: Detailed emergency scenario types (wildfires, ice storms, floods, tornadoes, avalanches, cyber attacks)
+- **Features**: Platform capabilities and technical specifications
+- **Case Studies**: Real success stories with quantified results
+- **Resources**: Whitepapers, webinars, blog posts, events
+- **Contact**: Multi-channel contact options with emergency support
 
-### `npm test`
+### 🎨 Design System
+- **Dark Theme**: Professional dark blue (#0f172a) background with gray (#1e293b) sections
+- **Orange Accents**: EXRSIM brand orange (#f97316) for highlights and CTAs
+- **Responsive**: Mobile-first design with responsive breakpoints
+- **Professional Typography**: Clean, readable fonts optimized for emergency management professionals
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🇨🇦 Canadian Context
+- **Bilingual Ready**: Structured for English/French support
+- **Local Scenarios**: All emergency scenarios based on real Canadian conditions
+- **Government Partnerships**: Highlights relationships with federal/provincial agencies
+- **Indigenous Community**: Respectful emergency management protocols
+- **Geographic Coverage**: All 13 provinces and territories
 
-### `npm run build`
+## Technical Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React 19**: Modern React with hooks and functional components
+- **React Router**: Client-side routing for SPA navigation
+- **Tailwind CSS**: Utility-first CSS framework with custom EXRSIM theme
+- **Lucide React**: Professional icon library for emergency management context
+- **Responsive Design**: Mobile-first approach with breakpoints
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Development
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
+- Node.js 16+ and npm
+- Modern web browser
 
-### `npm run eject`
+### Installation
+```bash
+cd /app/exrsim-website
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Development Server
+```bash
+npm start
+```
+Runs on http://localhost:3001
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Build for Production
+```bash
+npm run build
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Deployment Options
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1. Static Hosting (Recommended)
+- **Netlify**: Automatic deploys from Git with form handling
+- **Vercel**: Optimized for React with serverless functions
+- **AWS S3 + CloudFront**: Scalable with CDN distribution
+- **GitHub Pages**: Free hosting for public repositories
 
-## Learn More
+### 2. Canadian Hosting Providers
+- **Hostpapa**: Canadian-based hosting with data sovereignty
+- **Web Hosting Canada**: Local hosting with Canadian data centers
+- **OVH Canada**: Enterprise hosting with Montreal data centers
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Built for EXRSIM - Enhancing Canadian Emergency Preparedness** 🇨🇦
 
 ### Code Splitting
 
