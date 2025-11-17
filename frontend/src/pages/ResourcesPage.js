@@ -146,7 +146,7 @@ const ResourcesPage: React.FC = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="pt-24 sm:pt-22 md:pt-20">
       {/* Hero Section */}
       <section className="section-padding bg-exrsim-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
