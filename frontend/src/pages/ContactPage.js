@@ -71,14 +71,14 @@ const ContactPage: React.FC = () => {
 
   const emergencyContacts = [
     {
-      title: 'Emergency Exercise / ICS Support',
+      title: 'Technical Exercise or ICS Support',
       email: 'support@exrsim.com',
-      description: 'For urgent exercise / ICS support during active incidents'
+      description: 'For urgent technical exercise or ICS support during active incidents'
     },
     {
-      title: 'Technical Support',
-      email: 'support@exrsim.ca',
-      description: 'For critical technical issues during exercises'
+      title: 'Information',
+      email: 'Info@exrsim.ca',
+      description: 'For additional information so that we can help you better'
     }
   ];
 
@@ -119,14 +119,14 @@ const ContactPage: React.FC = () => {
           
           {/* Quick Contact Options */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-exrsim-gray rounded-lg p-6 border border-gray-700">
+            {/* <div className="bg-exrsim-gray rounded-lg p-6 border border-gray-700">
               <Calendar className="h-8 w-8 text-exrsim-orange mx-auto mb-3" />
               <h3 className="text-lg font-semibold text-white mb-2">Schedule a Demo</h3>
               <p className="text-gray-400 text-sm mb-4">See EXRSIM in action with a personalized demonstration</p>
               <button className="btn-primary text-white px-4 py-2 rounded-lg font-medium text-sm">
                 Book Demo
               </button>
-            </div>
+            </div> */}
             {/* <div className="bg-exrsim-gray rounded-lg p-6 border border-gray-700">
               <Phone className="h-8 w-8 text-exrsim-orange mx-auto mb-3" />
               <h3 className="text-lg font-semibold text-white mb-2">Speak with Sales</h3>
@@ -135,14 +135,14 @@ const ContactPage: React.FC = () => {
                 Call Sales
               </a>
             </div> */}
-            <div className="bg-exrsim-gray rounded-lg p-6 border border-gray-700">
+            {/* <div className="bg-exrsim-gray rounded-lg p-6 border border-gray-700">
               <Users className="h-8 w-8 text-exrsim-orange mx-auto mb-3" />
               <h3 className="text-lg font-semibold text-white mb-2">Exercise and ICS Consultation</h3>
               <p className="text-gray-400 text-sm mb-4">Get expert advice on exercise program design</p>
               <a href="info@exrsim.com" className="btn-primary text-white px-4 py-2 rounded-lg font-medium text-sm">
                 Consult Expert
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

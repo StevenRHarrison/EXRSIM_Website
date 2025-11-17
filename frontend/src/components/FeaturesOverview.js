@@ -16,8 +16,8 @@ const FeaturesOverview: React.FC = () => {
   const features = [
     {
       icon: Monitor,
-      title: 'Real-Time Simulation',
-      description: 'Experience realistic emergency scenarios with live decision-making and immediate consequences.',
+      title: 'Real-Time Builds',
+      description: 'Build an exercise or real-world event and respond in real-time.',
     },
     {
       icon: Users,
@@ -31,13 +31,13 @@ const FeaturesOverview: React.FC = () => {
     },
     {
       icon: BarChart3,
-      title: 'Performance Analytics',
-      description: 'Track training progress and identify improvement areas with detailed reporting.',
+      title: 'Performance and Comprehensive Lesson Learned',
+      description: 'Evaluate Personnel and Agency perfomance, use real Lessons Learned with actionable items.',
     },
     {
       icon: Clock,
-      title: '24/7 Scenarios',
-      description: 'Access training modules anytime, anywhere with cloud-based platform availability.',
+      title: '24/7 Exercises',
+      description: 'Access your exercises and training modules anytime, anywhere with cloud-based platform availability.',
     },
     {
       icon: Shield,

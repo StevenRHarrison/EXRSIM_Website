@@ -6,6 +6,7 @@ import {
   Wind, 
   Mountain, 
   Zap,
+  Plane,
   AlertTriangle,
   Clock,
   Users,
@@ -103,7 +104,7 @@ const ScenariosPage: React.FC = () => {
         'Family notification and media management'
       ],
       canadianContext: 'Features Rocky Mountain and Coastal Range terrain with realistic avalanche conditions.',
-      image: ("avalanche.jpg"), //'https://images.unsplash.com/photo-1551524164-6cf533cb7489?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: ("avalanche.jpg")
     },
     {
       icon: Zap,
@@ -122,6 +123,25 @@ const ScenariosPage: React.FC = () => {
       ],
       canadianContext: 'Addresses threats to Canadian critical infrastructure with realistic attack vectors.',
       image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    }
+  ,
+  {
+      icon: Plane,
+      title: 'Aviation Emergency',
+      // severity: 'High',
+      // duration: '1-3 days',
+      // participants: '20-80',
+      description: 'Aircraft Emergencies on or off Airfields',
+      details: [
+        'Aircraft accident and assessment',
+        'OnScene Command Post',
+        'Communication system activation',
+        'Public safety and evacuation',
+        'First responders drills and execution',
+        'Airfield recovery and restoration procedures'
+      ],
+      canadianContext: 'Train and exercise airport agencies and infrastructure to respond',
+      image: ("aircraft_incident.jpeg")
     }
   ];
 

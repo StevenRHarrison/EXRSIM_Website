@@ -19,44 +19,44 @@ const FeaturesPage: React.FC = () => {
   const coreFeatures = [
     {
       icon: Monitor,
-      title: 'Real-Time Simulation Engine',
-      description: 'Advanced simulation technology providing realistic emergency scenarios with dynamic, evolving conditions.',
+      title: 'Exercise Building',
+      description: 'Advanced exercise building steps to help you build realistic emergency scenarios with dynamic, evolving conditions.',
       details: [
-        'Physics-based environmental modeling',
-        'Dynamic weather and terrain integration',
-        'Real-time scenario progression',
-        'Consequence-based decision making',
-        'Multi-variable incident evolution'
+        'Building from Known Risks and Hazards "HIRA" ',
+        'Current weather and mapping integration',
+        'Step-by-step scenario development',
+        'Use for either Exercise or Real-World Events',
+        'Comprehensive with ease'
       ]
     },
     {
       icon: Users,
       title: 'Multi-Agency Collaboration',
-      description: 'Seamless coordination between different organizations, departments, and jurisdictions.',
+      description: 'Seamless coordination between different organizations, departments, and agencies.',
       details: [
         'Role-based access and permissions',
-        'Inter-agency communication tools',
-        'Unified command structure support',
-        'Cross-jurisdictional coordination',
+        'Scribing and Logging tools',
+        'Incident Command System',
+        'ICS 2xx Series Forms',
         'Real-time participant tracking'
       ]
     },
     {
       icon: Map,
-      title: 'Interactive GIS Mapping',
-      description: 'Comprehensive geographic information system with Canadian topographic and infrastructure data.',
+      title: 'Interactive Mapping',
+      description: 'Comprehensive geographic information system with Canadian topographic.',
       details: [
         'High-resolution Canadian mapping',
-        'Infrastructure layer overlays',
+        'Geographical overlays',
         'Real-time asset tracking',
-        'Evacuation route planning',
+        'Drawing Objects and Markers for Situational Awareness',
         'Resource deployment visualization'
       ]
     },
     {
       icon: BarChart3,
-      title: 'Advanced Analytics',
-      description: 'Comprehensive performance tracking and improvement identification through detailed analytics.',
+      title: 'Improvement and Lessons Learned',
+      description: 'Comprehensive performance tracking, improvement and detailed Lessons Learned.',
       details: [
         'Real-time performance metrics',
         'Decision timing analysis',
@@ -75,9 +75,9 @@ const FeaturesPage: React.FC = () => {
       details: [
         '99.9% uptime guarantee',
         'Auto-scaling infrastructure',
-        'Global content delivery',
-        'Multi-region redundancy',
-        'Instant deployment capability'
+        'Global content access',
+        'Multi-agency redundancy',
+        'Operations Center Capable'
       ]
     },
     {
@@ -87,29 +87,27 @@ const FeaturesPage: React.FC = () => {
       details: [
         'Responsive web application',
         'Native mobile apps (iOS/Android)',
-        'Offline mode capability',
-        'Cross-device synchronization',
+        'Image upload/Camera Capture',
+        'Multi Screen Functionaility',
         'Touch-optimized interfaces'
       ]
     },
     {
       icon: Lock,
       title: 'Enterprise Security',
-      description: 'Military-grade security protecting sensitive training data and scenarios.',
+      description: 'Security protecting sensitive exercise data, scenarios and response.',
       details: [
-        'End-to-end encryption',
-        'SOC 2 Type II compliance',
         'Multi-factor authentication',
         'Role-based access control',
-        'Audit trail logging'
+        'Audit trail logging',
+        'Activity and event tracking'
       ]
     },
     {
       icon: RefreshCw,
       title: 'Continuous Updates',
-      description: 'Regular platform updates with new scenarios and enhanced features.',
+      description: 'Regular platform updates with new enhanced features and capabilities as they are developed.',
       details: [
-        'Monthly scenario releases',
         'Quarterly feature updates',
         'Real-world incident integration',
         'User feedback implementation',
@@ -136,33 +134,29 @@ const FeaturesPage: React.FC = () => {
       title: 'Comprehensive Reporting',
       description: 'Detailed after-action reports and performance documentation.',
       details: [
-        'Automated report generation',
-        'Custom report templates',
+        'Personnel and Agency Performance Reports',
+        'ICS 2xx Series Reports',
         'Performance trend analysis',
-        'Compliance documentation',
-        'Training certification records'
+        'Upload agency documentation'
       ]
     },
     {
       icon: Shield,
       title: 'Standards Compliance',
-      description: 'Full compliance with Canadian and international emergency management standards.',
+      description: 'Full compliance with Canadian emergency management standards.',
       details: [
         'ICS (Incident Command System)',
-        'NIMS (National Incident Management System)',
         'Canadian Standards Association',
-        'ISO 22301 (Business Continuity)',
-        'Provincial emergency protocols'
+        'Provincial and Municipal emergency protocols'
       ]
     },
     {
       icon: Clock,
       title: 'Flexible Scheduling',
-      description: 'Training sessions that fit your organization\'s schedule and availability.',
+      description: 'Build your exercises that fit your organization\'s schedule and availability.',
       details: [
         'Self-paced learning modules',
         'Scheduled group exercises',
-        'Just-in-time training',
         'Emergency drill integration',
         'Continuous assessment options'
       ]
@@ -284,7 +278,7 @@ const FeaturesPage: React.FC = () => {
             </div>
             <div className="bg-exrsim-gray rounded-lg p-6 border border-gray-700 text-center">
               <div className="text-2xl font-bold text-exrsim-orange mb-3">Learning Management</div>
-              <p className="text-gray-300">Integration with corporate LMS and training record systems</p>
+              <p className="text-gray-300">Improved performance and comprehensive Lessons Learned </p>
             </div>
           </div>
         </div>
@@ -300,7 +294,7 @@ const FeaturesPage: React.FC = () => {
             See how our comprehensive feature set can transform your organization's 
             emergency preparedness capabilities.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
               className="bg-white text-exrsim-orange px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
@@ -313,7 +307,7 @@ const FeaturesPage: React.FC = () => {
             >
               View Success Stories
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

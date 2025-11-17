@@ -46,6 +46,7 @@ const SectorsOverview: React.FC = () => {
       features: ['HAZMAT Response', 'Industrial Fire', 'Chemical Spills', 'Workplace Safety'],
       image: ("hazmat.jpg"), //'https://images.unsplash.com/photo-1565514158723-4f31a1f0cfd8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     }
+    
   ];
 
   return (

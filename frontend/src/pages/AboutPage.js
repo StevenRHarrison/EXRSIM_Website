@@ -103,7 +103,8 @@ const AboutPage: React.FC = () => {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                src="command_center.jpg"
+                //src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Emergency Operations Center"
                 className="rounded-lg shadow-2xl"
               />
@@ -138,7 +139,7 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Leadership Team */}
-      <section className="section-padding bg-exrsim-gray">
+      {/* <section className="section-padding bg-exrsim-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Leadership Team</h2>
@@ -163,7 +164,7 @@ const AboutPage: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Canadian Focus */}
       <section className="section-padding bg-exrsim-dark">
@@ -171,7 +172,8 @@ const AboutPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img
-                src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                src="Canada.jpg"
+                //src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Canadian landscape"
                 className="rounded-lg shadow-2xl"
               />
