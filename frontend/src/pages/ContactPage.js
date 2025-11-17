@@ -401,13 +401,35 @@ const ContactPage: React.FC = () => {
                 </div>
 
                 {/* Submit Button */}
-                <a href="mailto:info@exrsim.com"
+                <button
                   type="submit"
-                  className="w-full btn-primary text-white py-4 rounded-lg font-semibold text-lg flex items-center justify-center space-x-2"
+                  disabled={formStatus.loading}
+                  className={`w-full btn-primary text-white py-4 rounded-lg font-semibold text-lg flex items-center justify-center space-x-2 transition-all ${
+                    formStatus.loading 
+                      ? 'opacity-50 cursor-not-allowed' 
+                      : 'hover:bg-exrsim-orange-light'
+                  }`}
                 >
-                  <Send className="h-5 w-5" />
-                  <span>Send Message</span>
-                </a>
+                  {formStatus.loading ? (
+                    <>
+                      <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"></div>
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="h-5 w-5" />
+                      <span>Send Message</span>
+                    </>
+                  )}
+                </button>
+                
+                {/* Alternative Contact Method */}
+                <p className="text-center text-gray-400 text-sm">
+                  Or email us directly at{' '}
+                  <a href="mailto:info@exrsim.com" className="text-exrsim-orange hover:text-exrsim-orange-light underline">
+                    info@exrsim.com
+                  </a>
+                </p>
               </form>
             </div>
 
