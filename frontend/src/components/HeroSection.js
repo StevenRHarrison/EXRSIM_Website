@@ -37,7 +37,7 @@ const HeroSection: React.FC = () => {
   }, [heroImages.length]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-20 md:pt-16">
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((image, index) => (
