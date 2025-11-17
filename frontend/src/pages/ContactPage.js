@@ -26,16 +26,84 @@ const ContactPage: React.FC = () => {
     urgency: 'normal'
   });
 
+  const [formStatus, setFormStatus] = useState({
+    loading: false,
+    success: false,
+    error: false,
+    message: ''
+  });
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear status when user starts typing again
+    if (formStatus.success || formStatus.error) {
+      setFormStatus({ loading: false, success: false, error: false, message: '' });
+    }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your inquiry! We\'ll respond within 24 hours.');
+    
+    // Set loading state
+    setFormStatus({ loading: true, success: false, error: false, message: 'Sending your message...' });
+
+    try {
+      // Submit form to PHP handler
+      const response = await fetch('/contact-handler.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        // Success
+        setFormStatus({
+          loading: false,
+          success: true,
+          error: false,
+          message: result.message || 'Thank you for your inquiry! We will respond within 24 hours.'
+        });
+        
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          organization: '',
+          title: '',
+          sector: '',
+          inquiry: '',
+          message: '',
+          preferredContact: 'email',
+          urgency: 'normal'
+        });
+
+        // Scroll to top to show success message
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        // Error from server
+        setFormStatus({
+          loading: false,
+          success: false,
+          error: true,
+          message: result.message || 'There was an error sending your message. Please try again.'
+        });
+      }
+    } catch (error) {
+      // Network or other error
+      setFormStatus({
+        loading: false,
+        success: false,
+        error: true,
+        message: 'Unable to send message. Please check your connection or email us directly at info@exrsim.com'
+      });
+    }
   };
 
   const contactInfo = [
